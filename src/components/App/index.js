@@ -8,6 +8,7 @@ import "./index.css";
 function App() {
   const [input, setInput] = useState("");
   const [list, setList] = useState([]);
+  const [priority, setPriority] = useState("1");
 
   function handleChange(event) {
     setInput(event.target.value);
@@ -40,6 +41,10 @@ function App() {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
   }
 
+  function handlePriorityChange(event) {
+    setPriority(event.target.value);
+  }
+
   return (
     <div>
       <h1>The Three Amigos To Do List App!!!</h1>
@@ -50,7 +55,11 @@ function App() {
         type="text"
         label="To Do: "
       />
-      <Select label="Priority: " options={[1, 2, 3, 4, 5]} />
+      <Select
+        label="Priority: "
+        options={[1, 2, 3, 4, 5]}
+        onChange={handlePriorityChange}
+      />
       <Button onClick={handleClick} />
       <List toDoList={list} handleDelete={handleDelete} />
     </div>
