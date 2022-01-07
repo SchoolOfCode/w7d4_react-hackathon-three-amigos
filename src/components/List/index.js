@@ -5,7 +5,7 @@ function List({ toDoList }) {
   return (
     <ul>
       {toDoList.map(function (item) {
-        return <ListItem text={item} />;
+        return <ListItem key={item} text={item} />;
       })}
     </ul>
   );
