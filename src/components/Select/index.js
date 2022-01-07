@@ -1,11 +1,11 @@
 import React from "react";
 import "./index.css";
 
-function Select({ label, options, onChange }) {
+function Select({ onKeyPress, label, options, onChange }) {
   return (
     <>
       <label>{label}</label>
-      <select onChange={onChange}>
+      <select onChange={onChange} onKeyPress={onKeyPress}>
         {options.map(function (option) {
           return (
             <option key={option} value={option}>

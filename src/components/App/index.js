@@ -18,10 +18,14 @@ function App() {
     if (list.includes(capitaliseFirstLetter(input))) {
       alert(`${input} is already on your list!`);
     } else {
-      setList([
-        { text: capitaliseFirstLetter(input), priority: priority },
-        ...list,
-      ]);
+      setList(
+        [
+          { text: capitaliseFirstLetter(input), priority: priority },
+          ...list,
+        ].sort(function (a, b) {
+          return a.priority - b.priority;
+        })
+      );
     }
     setInput("");
   }
@@ -32,13 +36,18 @@ function App() {
 
   function handleEnterKeyPress(event) {
     if (event.key === "Enter") {
+      event.preventDefault();
       if (list.includes(capitaliseFirstLetter(input))) {
         alert(`${input} is already on your list!`);
       } else {
-        setList([
-          { text: capitaliseFirstLetter(input), priority: priority },
-          ...list,
-        ]);
+        setList(
+          [
+            { text: capitaliseFirstLetter(input), priority: priority },
+            ...list,
+          ].sort(function (a, b) {
+            return a.priority - b.priority;
+          })
+        );
       }
       setInput("");
     }
@@ -65,6 +74,7 @@ function App() {
         label="Priority: "
         options={[1, 2, 3, 4, 5]}
         onChange={handlePriorityChange}
+        onKeyPress={handleEnterKeyPress}
       />
       <Button onClick={handleClick} />
       <List toDoList={list} handleDelete={handleDelete} />
