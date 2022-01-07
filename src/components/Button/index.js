@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import "./index.css";
 
 function Button({ onClick }) {
-  return <button onClick={onClick}>Add to the List!</button>;
+  return <button className="addButton" onClick={onClick}>Add to the List!</button>;
 }
 
 export default Button;

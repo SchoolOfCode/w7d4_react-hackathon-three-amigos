@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "../Input/index.js";
 import Button from "../Button/index.js";
 import List from "../List/index.js";
+import "./index.css";
 
 function App() {
   const [input, setInput] = useState("");
@@ -12,10 +13,10 @@ function App() {
   }
 
   function handleClick() {
-    if (list.includes(input.toLowerCase())) {
+    if (list.includes(capitaliseFirstLetter(input))) {
       alert(`${input} is already on your list!`);
     } else {
-      setList([input.toLowerCase(), ...list]);
+      setList([capitaliseFirstLetter(input), ...list]);
     }
     setInput("");
   }
@@ -24,9 +25,28 @@ function App() {
     setList([...list.slice(0, index), ...list.slice(index + 1)]);
   }
 
+  function handleEnterKeyPress(event) {
+    if (event.key === "Enter") {
+      if (list.includes(capitaliseFirstLetter(input))) {
+        alert(`${input} is already on your list!`);
+      } else {
+        setList([capitaliseFirstLetter(input), ...list]);
+      }
+      setInput("");
+    }
+  }
+  function capitaliseFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  }
+
   return (
     <div>
-      <Input value={input} onChange={handleChange} />
+      <h1>The Three Amigos To Do List App!!!</h1>
+      <Input
+        value={input}
+        onChange={handleChange}
+        onKeyPress={handleEnterKeyPress}
+      />
       <Button onClick={handleClick} />
       <List toDoList={list} handleDelete={handleDelete} />
     </div>

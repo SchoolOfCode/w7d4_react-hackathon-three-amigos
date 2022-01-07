@@ -1,0 +1,10 @@
+button {
+  background-color: #a9b1b2;
+  color: black;
+  height: 30px;
+  width: 150px;
+}
+
+.addButton:hover {
+  background-color: green;
+}
