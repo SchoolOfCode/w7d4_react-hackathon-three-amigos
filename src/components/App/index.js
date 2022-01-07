@@ -18,7 +18,10 @@ function App() {
     if (list.includes(capitaliseFirstLetter(input))) {
       alert(`${input} is already on your list!`);
     } else {
-      setList([capitaliseFirstLetter(input), ...list]);
+      setList([
+        { text: capitaliseFirstLetter(input), priority: priority },
+        ...list,
+      ]);
     }
     setInput("");
   }
@@ -32,7 +35,10 @@ function App() {
       if (list.includes(capitaliseFirstLetter(input))) {
         alert(`${input} is already on your list!`);
       } else {
-        setList([capitaliseFirstLetter(input), ...list]);
+        setList([
+          { text: capitaliseFirstLetter(input), priority: priority },
+          ...list,
+        ]);
       }
       setInput("");
     }

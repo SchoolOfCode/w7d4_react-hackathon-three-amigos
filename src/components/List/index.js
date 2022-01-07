@@ -7,9 +7,10 @@ function List({ toDoList, handleDelete }) {
       {toDoList.map(function (item, index) {
         return (
           <ListItem
-            key={item}
+            key={item.text}
             index={index}
-            text={item}
+            text={item.text}
+            priority={item.priority}
             handleDelete={handleDelete}
           />
         );

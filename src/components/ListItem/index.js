@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 
-function ListItem({ index, text, handleDelete }) {
+function ListItem({ priority, index, text, handleDelete }) {
   const [isComplete, setIsComplete] = useState(false);
 
   function handleClick() {
@@ -11,7 +11,7 @@ function ListItem({ index, text, handleDelete }) {
   return (
     <>
       <li className={isComplete ? "complete" : ""} onClick={handleClick}>
-        {text}
+        {text} -- Priority: {priority}
         <button onClick={() => handleDelete(index)}>Delete</button>
       </li>
     </>
