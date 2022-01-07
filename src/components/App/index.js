@@ -14,9 +14,9 @@ function App() {
     setList([input, ...list]);
   }
 
-  function handleDelete(toBeDeleted) {
-    console.log(toBeDeleted);
-    setList(list.filter((item) => item !== toBeDeleted));
+  function handleDelete(index) {
+    console.log(index);
+    setList([...list.slice(0, index), ...list.slice(index + 1)]);
   }
 
   return (

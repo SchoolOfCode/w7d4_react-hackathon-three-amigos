@@ -1,9 +1,9 @@
 import React from "react";
 
-function ListItem({ text, handleDelete }) {
+function ListItem({ index, text, handleDelete }) {
   return (
     <li>
-      {text} <button onClick={() => handleDelete(text)}>Delete</button>
+      {text} <button onClick={() => handleDelete(index)}>Delete</button>
     </li>
   );
 }

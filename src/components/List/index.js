@@ -4,8 +4,15 @@ import ListItem from "../ListItem/index.js";
 function List({ toDoList, handleDelete }) {
   return (
     <ul>
-      {toDoList.map(function (item) {
-        return <ListItem key={item} text={item} handleDelete={handleDelete} />;
+      {toDoList.map(function (item, index) {
+        return (
+          <ListItem
+            key={item}
+            index={index}
+            text={item}
+            handleDelete={handleDelete}
+          />
+        );
       })}
     </ul>
   );
