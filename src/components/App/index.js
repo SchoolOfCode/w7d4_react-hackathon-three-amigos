@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "../Input/index.js";
 import Button from "../Button/index.js";
 import List from "../List/index.js";
+import Select from "../Select/index.js";
 import "./index.css";
 
 function App() {
@@ -46,7 +47,10 @@ function App() {
         value={input}
         onChange={handleChange}
         onKeyPress={handleEnterKeyPress}
+        type="text"
+        label="To Do: "
       />
+      <Select label="Priority: " options={[1, 2, 3, 4, 5]} />
       <Button onClick={handleClick} />
       <List toDoList={list} handleDelete={handleDelete} />
     </div>

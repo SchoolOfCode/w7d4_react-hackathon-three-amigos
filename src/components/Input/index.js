@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
 
-function Input({ value, onChange, onKeyPress }) {
+function Input({ label, type, value, onChange, onKeyPress }) {
   return (
-    <input
-      type="text"
-      value={value}
-      onChange={onChange}
-      onKeyPress={onKeyPress}
-    ></input>
+    <>
+      <label>{label}</label>
+      <input
+        type={type}
+        value={value}
+        onChange={onChange}
+        onKeyPress={onKeyPress}
+      ></input>
+    </>
   );
 }
 
