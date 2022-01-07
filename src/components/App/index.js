@@ -15,7 +15,7 @@ function App() {
   }
 
   function handleClick() {
-    if (list.includes(capitaliseFirstLetter(input))) {
+    if (list.some((item) => item.text === capitaliseFirstLetter(input))) {
       alert(`${input} is already on your list!`);
     } else {
       setList(
@@ -37,7 +37,7 @@ function App() {
   function handleEnterKeyPress(event) {
     if (event.key === "Enter") {
       event.preventDefault();
-      if (list.includes(capitaliseFirstLetter(input))) {
+      if (list.some((item) => item.text === capitaliseFirstLetter(input))) {
         alert(`${input} is already on your list!`);
       } else {
         setList(
