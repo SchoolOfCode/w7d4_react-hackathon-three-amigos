@@ -10,12 +10,17 @@ function App() {
   function handleChange(event) {
     setInput(event.target.value);
   }
+
   function handleClick() {
-    setList([input, ...list]);
+    if (list.includes(input.toLowerCase())) {
+      alert(`${input} is already on your list!`);
+    } else {
+      setList([input.toLowerCase(), ...list]);
+    }
+    setInput("");
   }
 
   function handleDelete(index) {
-    console.log(index);
     setList([...list.slice(0, index), ...list.slice(index + 1)]);
   }
 
