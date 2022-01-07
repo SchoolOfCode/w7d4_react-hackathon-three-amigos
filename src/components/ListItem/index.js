@@ -1,5 +1,4 @@
 import React from "react";
-// import DeleteButton from "../DeleteButton/index.js";
 
 function ListItem({ text, handleDelete }) {
   return (

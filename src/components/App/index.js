@@ -14,15 +14,16 @@ function App() {
     setList([input, ...list]);
   }
 
-  function handleDelete() {
-    console.log("hi");
+  function handleDelete(index) {
+    // setList(...list.slice(0, index), ...list.slice(index + 1));
+    console.log("pressed");
   }
 
   return (
     <div>
       <Input value={input} onChange={handleChange} />
       <Button onClick={handleClick} />
-      <List toDoList={list} handleDelete={handleDelete}/>
+      <List toDoList={list} handleDelete={handleDelete} />
     </div>
   );
 }
