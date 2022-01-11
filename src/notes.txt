@@ -1,0 +1,30 @@
+To Do list app.
+
+In valerio's head
+Create an app component and have an input field and maybe a button "add" -unique component
+
+Under the input have a component called "list" with multiple "list items" reusable components
+
+Start simple with a MVP...just adds to the to-do list and deletes from the list.
+
+Step by step plan:
+{
+As a first step,create input field and button
+Second step, Create list and list items
+third step, add list item to list when button is pressed
+Once first 3 steps are working, we build onto it.
+}
+
+States and props 
+{
+    "React applications are about managing their own state"
+    App sits at the top and is the smart component, keeps track of list components, this 
+    will be an array that takes list items.
+    The state will keep track of input field and what the input field "triggered by onChange" is 
+    doing (event listener). Button will also have a "onClick listener".
+    The props will be what are being sent down from app to input field and button so props will be the listeners 
+    from the button and input field (onChange and onClick). Our list buttons will have as props each item from 
+    the array which listens to the state of the application.
+}
+We need to make sure our index.js that lives inside app are linked with index.js outside our src folder.
+
